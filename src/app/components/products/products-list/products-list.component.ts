@@ -32,6 +32,17 @@ export class ProductsListComponent implements OnInit {
   }
   //o subscribe é responsável por ativar o observable
 
+  deleteProduct(product: IProduct): void {
+    this.productService.delete(product.id).subscribe(() => {
+      this.productService.showMessage(
+        'SISTEMA',
+        `${product.name} foi excluido com sucesso`,
+        'toast-error'
+      );
+      this.loadProducts()
+    })
+  }
+
 
 
 }

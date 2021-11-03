@@ -26,10 +26,10 @@
         <td>{{product.validade | date: "shortDate"}}</td>
         <td>{{product.price | currency: "BRL" }}</td>
         <td>
-          <button class="btn btn-warning">
+          <button class="btn btn-warning" routerLink="/products/edit-product/{{product.id}}">
             <i class="fa fa-solid fa-pencil"></i>
           </button>
-          <button class="btn btn-danger ml-2">
+          <button class="btn btn-danger ml-2" (click)="deleteProduct(product)">
             <i class="fa fa-solid fa-trash"></i>
           </button>
         </td>
