@@ -1,22 +1,7 @@
 <h1>Welcome to my angular CRUD!</h1>
 
-<div class="card" style="width: 18rem;">
-  <img src="{{image}}" class="card-img-top" alt="...">
-  <!-- se for uma imagem vindo de assets: [src]="image" data binding propety 
-  sendo que image tbm tem que ser declarado no componente.ts -->
-  <div class="card-body">
-    <h5 class="card-title">
-      {{ productName | uppercase}}
-      <!--pipe-->
-      <span *ngIf='sale ; else elseBlock' class="badge badge-success">SALE</span>
-      <ng-template #elseBlock>
-        <!-- o elseBlock pode ter outro nome -->
-        <span class="badge badge-primary"> Enjoy </span>
-      </ng-template>
-    </h5>
-    <p class="card-text">
-      Identificação: {{ productId }}
-    </p>
-    <a href="#" class="btn btn-primary float-right">{{ price | currency: "BRL" }}</a>
-  </div>
-</div>
+<app-product-card [image]="image" [productName]="productName" [productId]="productId" [price]="price" [sale]="sale">
+  <!-- passando "props" para o componente -->
+  <!-- [] => devem ter o mesmo nome das varíaveis -->
+  <!-- "" => variaveis que temos acesso pelo ts -->
+</app-product-card>

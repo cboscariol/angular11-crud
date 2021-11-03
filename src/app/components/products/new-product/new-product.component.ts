@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewProductComponent implements OnInit {
 
+  productName: string
+  validade: string
+  price: string
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  saveProduct(): void {
+    console.log(this.productName)
   }
 
 }
